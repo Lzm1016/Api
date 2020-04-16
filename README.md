@@ -17,5 +17,3 @@ python migrare.py db upgrade
 1003 参数不能为空
 
 1004 参数格式错误/参数无效
-
-我是tr分支修改的
