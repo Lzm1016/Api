@@ -21,11 +21,13 @@ api = Api(home_bp)
 class Home(BaseResource):
 
     def get(self):
-        carousels = carousel_img()
-        courses = home_index(page=1, error_out=False)
-        course_types = course_type()
-        course_tables = course_up()
-
+        try:
+            carousels = carousel_img()
+            courses = home_index(page=1, error_out=False)
+            course_types = course_type()
+            course_tables = course_up()
+        except Exception as e:
+            raise e
         carousels.update(course_types)
         carousels.update(course_tables)
         carousels.update(courses)
